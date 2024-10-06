@@ -5,8 +5,10 @@ const multer = require('multer');
 const path = require('path');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-// Middleware to parse JSON and urlencoded data
+// Middleware to serve static files
+app.use(express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -23,9 +25,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // POST route to send email
-app.post('/send-email', upload.single('photo'), (req, res) => {
+app.post('/api/send-email', upload.single('photo'), (req, res) => {
     const { candidateName, monthlyIncome, manglik, birthPlace, birthDate, height, skinColor, education, fatherName, familyProfession, address, mobile, gotraSelf, gotraMother, gotraGrandmother, gotraNani } = req.body;
-    const filePath = req.file ? req.file.path : null;
+    const filePath = req.file ? req.file.path : null; // Handle optional file upload
 
     // Create transporter
     const transporter = nodemailer.createTransport({
@@ -60,7 +62,7 @@ app.post('/send-email', upload.single('photo'), (req, res) => {
         attachments: filePath ? [{
             filename: path.basename(filePath),
             path: filePath
-        }] : [] // Only attach if filePath is available
+        }] : []
     };
 
     // Send email
@@ -73,5 +75,7 @@ app.post('/send-email', upload.single('photo'), (req, res) => {
     });
 });
 
-// Export the app for Vercel
-module.exports = app;
+// Start server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
