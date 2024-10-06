@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>विप्र फाउंडेशन फॉर्म</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <img src="src/Logo1.webp" alt="Logo 1" class="logo logo-left">
+    <img src="src/Logo2.webp" alt="Logo 2" class="logo logo-right">
+    <h1>विप्र फाउंडेशन कोटा जोन</h1>
+    <p>ब्राह्मण युवक युवती परिचय सम्मेलन</p>
+    <p>दिनांक: 22/12/2024</p>
+    <p>कार्यक्रम स्थान - मांगलेश्वरी गार्डन, रंगबाड़ी रोड, कोटा</p>
+
+    <form id="vipraFormHindi" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="candidateName">प्रत्याशी वर/वधू का नाम</label>
+            <input type="text" id="candidateName" name="candidateName" placeholder="नाम दर्ज करें" required>
+        </div>
+
+        <div class="form-group">
+            <label for="monthlyIncome">मासिक आय</label>
+            <input type="number" id="monthlyIncome" name="monthlyIncome" placeholder="मासिक आय दर्ज करें" required>
+        </div>
+
+        <div class="form-group">
+            <label for="manglik">मांगलिक (हाँ/नहीं)</label>
+            <select id="manglik" name="manglik" required>
+                <option value="yes">हाँ</option>
+                <option value="no">नहीं</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="birthPlace">जन्म स्थान</label>
+            <input type="text" id="birthPlace" name="birthPlace" placeholder="जन्म स्थान दर्ज करें" required>
+        </div>
+
+        <div class="form-group">
+            <label for="birthDate">जन्म दिनांक</label>
+            <input type="date" id="birthDate" name="birthDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="height">ऊंचाई (फीट/इंच)</label>
+            <input type="text" id="height" name="height" placeholder="उदाहरण: 5'8" required>
+        </div>
+
+        <div class="form-group">
+            <label for="skinColor">रंग</label>
+            <input type="text" id="skinColor" name="skinColor" placeholder="उदाहरण: गोरा, गेहुंआ" required>
+        </div>
+
+        <div class="form-group">
+            <label for="education">शिक्षा</label>
+            <input type="text" id="education" name="education" placeholder="शिक्षा दर्ज करें" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fatherName">पिता का नाम</label>
+            <input type="text" id="fatherName" name="fatherName" placeholder="पिता का नाम दर्ज करें" required>
+        </div>
+
+        <div class="form-group">
+            <label for="familyProfession">व्यवसाय</label>
+            <input type="text" id="familyProfession" name="familyProfession" placeholder="व्यवसाय दर्ज करें" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">पता</label>
+            <textarea id="address" name="address" placeholder="पता दर्ज करें" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">मोबाइल नं.</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="मोबाइल नंबर दर्ज करें" required>
+        </div>
+
+        <div class="form-group">
+            <label for="gotraSelf">स्वयं का गोत्र</label>
+            <input type="text" id="gotraSelf" name="gotraSelf" placeholder="गोत्र दर्ज करें" required>
+        </div>
+
+        <div class="form-group">
+            <label for="gotraMother">माँ का गोत्र</label>
+            <input type="text" id="gotraMother" name="gotraMother" placeholder="माँ का गोत्र दर्ज करें" required>
+        </div>
+
+        <div class="form-group">
+            <label for="gotraGrandmother">दादी का गोत्र</label>
+            <input type="text" id="gotraGrandmother" name="gotraGrandmother" placeholder="दादी का गोत्र दर्ज करें" required>
+        </div>
+
+        <div class="form-group">
+            <label for="gotraNani">नानी का गोत्र</label>
+            <input type="text" id="gotraNani" name="gotraNani" placeholder="नानी का गोत्र दर्ज करें" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="photo">फोटो अपलोड करें</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">सबमिट करें</button>
+        </div>
+
+        <div id="responseMessage"></div>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+# Node.js dependencies
+node_modules/
+
+# Log files
+npm-debug.log
+*.log
+
+# Environment variables
+.env
+
+# Uploads directory
+uploads/
+
+# Vercel files
+.vercel/
+
+# Build directories
+dist/
+build/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
